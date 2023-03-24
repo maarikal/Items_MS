@@ -1,6 +1,11 @@
-## Newspaper
+## Items
 
-Newspaper is a simple express app that allows you to create a simple blog.
+Items Repository is a simple express app that allows you to create a simple repository.
+
+### Description
+
+This is a web application for managing a list of items. Users can view a list of items, view details about individual
+items, add new items (if signed in), and delete existing items (if signed in).
 
 ### Installation
 

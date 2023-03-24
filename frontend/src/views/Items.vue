@@ -3,7 +3,6 @@
   <h2>Here are our list of items: </h2>
   <div class="overflow-x-auto">
     <table class="table table-zebra w-full">
-      <!-- head -->
       <thead>
       <tr>
         <th></th>
@@ -13,7 +12,6 @@
       </tr>
       </thead>
       <tbody>
-      <!-- row 1 -->
       <tr>
         <th>1</th>
         <td>punane tulp</td>
@@ -28,39 +26,38 @@
           </div>
         </td>
       </tr>
-      <!-- row 2 -->
-      <tr>
-        <th>2</th>
-        <td>valge nartsiss</td>
-        <td>kevadlill, ka sibulaga</td>
-        <td>
-          <div class="flex items-center space-x-3">
-            <div class="avatar">
-              <div class="mask mask-squircle w-12 h-12">
-                <img src="https://lillesibulad.ee/wp-content/uploads/2022/08/narcissus-recurvus-584113_1920.jpg"
-                     alt="valge nartsiss"/>
-              </div>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <!-- row 3 -->
-      <tr>
-        <th>3</th>
-        <td>sinilill</td>
-        <td>kevadlill, mis õitseb metsas</td>
-        <td>
-          <div class="flex items-center space-x-3">
-            <div class="avatar">
-              <div class="mask mask-squircle w-12 h-12">
-                <img src="https://www.muhutikand.ee/wp-content/uploads/2010/04/sl21.jpg" alt="sinilill"/>
-              </div>
-            </div>
-          </div>
-        </td>
-      </tr>
+
       </tbody>
     </table>
+
+    <!--    <table class="table table-zebra w-full">
+          &lt;!&ndash; head &ndash;&gt;
+          <thead>
+          <tr>
+            <th></th>
+            <th>Item</th>
+            <th>Description</th>
+            <th>Image</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr v-for="(item, index) in items" :key="index">
+            <th>{{ index + 1 }}</th>
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td>
+              <div class="flex items-center space-x-3">
+                <div class="avatar">
+                  <div class="mask mask-squircle w-12 h-12">
+                    <img :src="item.image" :alt="item.name"/>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>-->
+
   </div>
 </template>
 
@@ -68,6 +65,31 @@
 export default {
   name: "items"
 }
+
+/*
+import { PrismaClient } from '@prisma/client'
+import { reactive } from 'vue'
+
+const prisma = new PrismaClient()
+
+export default {
+  setup() {
+    const state = reactive({
+      items: []
+    })
+
+    const fetchData = async () => {
+      const items = await prisma.item.findMany()
+      state.items = items
+    }
+
+    fetchData()
+
+    return {
+      ...state
+    }
+  }
+} */
 </script>
 
 <style scoped>
