@@ -4,7 +4,8 @@ import {createRouter, createWebHistory} from 'vue-router';
 // @ts-ignore
 import SignUp from '../views/SignUp.vue';
 import SignIn from '../views/SignIn.vue';
-import Notes from '../views/Notes.vue';
+import Notes from '../views/Intro.vue';
+import Items from '../views/Items.vue';
 
 const routes = [
 
@@ -22,6 +23,11 @@ const routes = [
         path: '/signin',
         name: 'Sign In',
         component: SignIn,
+    },
+    {
+        path: '/items',
+        name: 'List of items',
+        component: Items,
     }
 ];
 

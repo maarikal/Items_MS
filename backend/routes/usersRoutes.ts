@@ -67,10 +67,10 @@ async function requireValidEmail(
     }
 
     try {
-        const result = await verifyEmail(req.body.email);
+       /* const result = await verifyEmail(req.body.email);
         if (!result.success) {
             return res.status(400).send({error: result.info});
-        }
+        }*/
 
         // Check if user already exists
         const userExists = await prisma.user.findUnique({
